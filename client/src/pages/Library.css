@@ -1,0 +1,97 @@
+.library-empty {
+  text-align: center;
+  padding: var(--spacing-3xl) 0;
+}
+
+.library-empty-icon {
+  font-size: 5rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.library-empty h2 { margin-bottom: var(--spacing-sm); }
+.library-empty p { color: var(--text-secondary); margin-bottom: var(--spacing-xl); }
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.library-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.library-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108, 92, 231, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.library-card-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.library-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.library-card:hover .library-card-image img {
+  transform: scale(1.05);
+}
+
+.library-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.library-card:hover .library-card-overlay {
+  opacity: 1;
+}
+
+.library-card-info {
+  padding: var(--spacing-md);
+}
+
+.library-card-title {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.library-card-title:hover {
+  color: var(--primary-light);
+}
+
+.library-card-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.library-card-skeleton {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) { .library-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .library-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .library-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-sm); } }
